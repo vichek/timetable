@@ -1,0 +1,245 @@
+/**
+* Базовые свойства.
+*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+/**
+* Отключаем скролл.
+*/
+html, body{
+	height: 100%;
+  overflow: hidden;
+}
+body{
+  padding: 5px;
+  font-family: 'Andale Mono', monospace;
+  font-size: small;
+}
+table {
+  height: 100%;
+  overflow: hidden;
+}
+thead{
+  float:top;
+  display:block;
+  height: 40px;
+  background-color: #DC5B21;
+}
+/**
+* Делаем скролл для тела таблицы.
+*/
+tbody {
+  clear:both;
+  position: absolute;
+  top:105px;
+  display:block;
+  height: 80vh;
+  overflow: auto;
+  overflow-y: scroll;
+}
+td {
+  padding: 3px 10px;
+  width: 100px;
+  position: relative;
+}
+thead td{
+  text-align: left;
+  width: 100px;
+  font-size: middle;
+}
+header{
+  margin-top: 10px;
+	display:block;
+  float:top;
+  text-align: center;
+  font-size: large;
+  height:30px;
+}
+label{
+  font-size: medium;
+  height: 10px;
+}
+/**
+* Абсолютное позиционирование.
+*/
+.wrapper{
+  position: absolute;
+  top: 0px;
+  height: 100vh;
+	padding: 0px;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.tableWrapper{
+  height: 80vh;
+  width: 1000px;
+}
+.aircraftShort{
+  display: none;
+}
+/**
+* Выделение столбца по наведению мыши.
+*/
+tbody td:hover::after { 
+    opacity: 0.5;
+    background-color: #DC5B21;
+    content: '\00a0';  
+    height: 2000px;    
+    left: 0;
+    position: absolute;  
+    top:-1000px;
+    width: 100%;
+    z-index: -1;        
+}
+tbody td:hover::before { 
+    opacity: 0.5;
+    background-color: #DC5B21;
+    content: '\00a0';  
+    height: 1000px;    
+    left: 0;
+    position: absolute;  
+    bottom: 0px;
+    width: 100%;
+    z-index: -1;        
+}
+/**
+* Раскраска "зебра".
+*/
+tbody tr:nth-child(odd){
+  background-color: #70AB8F;
+}
+/**
+* Выделение строки по наведению мыши.
+*/
+tbody tr:hover{
+  opacity: 0.7;
+  background-color: #DC5B21;
+  color: white;
+}
+/**
+* Обработка чекбоксов с учётом раскраски "зебра" и обработки наведения мыши на строку.
+* Обработка чекбокса "Прилёт".
+*/
+.arrival:not(:checked) ~ .tableContainer .arrive{
+    display: none;
+}
+.arrival:not(:checked)+label ~table tr.departOdd{
+  background-color: #70AB8F;
+}
+.arrival:not(:checked)+label ~table tr.departEven{
+  background-color: white;
+}
+.arrival:not(:checked)+label ~table tbody tr:hover{
+  opacity: 0.7;
+  background-color: #DC5B21;
+}
+/**
+* Обработка чекбокса "Вылет".
+*/
+.departure:not(:checked) ~.tableContainer .depart{
+    display: none;
+}
+.departure:not(:checked) ~table tr.arriveOdd{
+  background-color: #70AB8F;
+}
+.departure:not(:checked) ~table tr.arriveEven{
+  background-color: white;
+}
+.departure:not(:checked) ~table tbody tr:hover{
+  opacity: 0.7;
+  background-color: #DC5B21;
+}
+/**
+* Обработка адаптивности таблицы к изменению ширины экрана.
+*/
+@media only screen and (max-width: 1000px) {
+  tbody{
+    width:900px;
+  }
+  .wrapper{
+    width: 900px;
+  }
+  .tableWrapper{
+    width: 900px;
+  }
+  .airline { 
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  tbody{
+    width:800px;
+  }
+  .wrapper{
+    width: 800px;
+  }
+  .tableWrapper{
+    width: 800px;
+  }
+  .aircraft{ 
+    display:none;
+  }
+  td.aircraftShort{
+    display: table-cell;
+  }
+}
+@media only screen and (max-width: 800px) {
+  tbody{
+    width:700px;
+  }
+  .wrapper{
+    width: 700px;
+  }
+  .tableWrapper{
+    width: 700px;
+  } 
+  .aircraftShort{
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) {
+  tbody{
+    width:600px;
+  }
+  .wrapper{
+    width: 600px;
+  }
+  .tableWrapper{
+    width: 600px;
+  } 
+  .comment{
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  tbody{
+    width:500px;
+  }
+  .wrapper{
+    width: 500px;
+  }
+  .tableWrapper{
+    width: 500px;
+  } 
+  .status{
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  tbody{
+    width:400px;
+  }
+  .wrapper{
+    width: 400px;
+  }
+  .tableWrapper{
+    width: 400px;
+  } 
+  .logo{
+    display: none;
+  }
+}
