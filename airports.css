@@ -58,6 +58,10 @@ header{
 label{
   font-size: medium;
   height: 10px;
+  margin-left: 5px;
+}
+ul li{
+  display: inline;
 }
 /**
 * Абсолютное позиционирование.
@@ -151,7 +155,8 @@ tbody tr:hover{
   background-color: #DC5B21;
 }
 /**
-* Обработка адаптивности таблицы к изменению ширины экрана.
+* Обработка адаптивности таблицы к изменению ширины экрана. При уменьшении ширины сокращаются столбцы таблицы, но при нажатии
+* на строку таблицы всплывает окно с данными рейса.
 */
 @media only screen and (max-width: 1000px) {
   tbody{
@@ -165,6 +170,23 @@ tbody tr:hover{
   }
   .airline { 
     display:none;
+  }
+  tbody tr:active::after{
+    content: attr(content);
+    display: block;
+    position: fixed;
+    padding: 20px 10px;
+    word-break: break-all;
+    border: 2px solid #DC5B21;
+    background-color: #1C3027;
+    font-size: medium;
+    top: 200px;
+    left: 10px;
+    width: 400px;
+    height: 90px;
+    border-radius: 20px;
+    color: white;
+    z-index: 100;
   }
 }
 
@@ -184,6 +206,23 @@ tbody tr:hover{
   td.aircraftShort{
     display: table-cell;
   }
+  tbody tr:active::after{
+    content: attr(content);
+    display: block;
+    position: fixed;
+    padding: 20px 10px;
+    word-break: break-all;
+    border: 2px solid #DC5B21;
+    background-color: #1C3027;
+    font-size: medium;
+    top: 200px;
+    left: 10px;
+    width: 400px;
+    height: 90px;
+    border-radius: 20px;
+    color: white;
+    z-index: 100;
+  }
 }
 @media only screen and (max-width: 800px) {
   tbody{
@@ -197,6 +236,23 @@ tbody tr:hover{
   } 
   .aircraftShort{
     display: none;
+  }
+  tbody tr:active::after{
+    content: attr(content);
+    display: block;
+    position: fixed;
+    padding: 20px 10px;
+    word-break: break-all;
+    border: 2px solid #DC5B21;
+    background-color: #1C3027;
+    font-size: medium;
+    top: 200px;
+    left: 10px;
+    width: 400px;
+    height: 90px;
+    border-radius: 20px;
+    color: white;
+    z-index: 100;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -212,6 +268,23 @@ tbody tr:hover{
   .comment{
     display: none;
   }
+  tbody tr:active::after{
+    content: attr(content);
+    display: block;
+    position: fixed;
+    padding: 20px 10px;
+    word-break: break-all;
+    border: 2px solid #DC5B21;
+    background-color: #1C3027;
+    font-size: medium;
+    top: 200px;
+    left: 10px;
+    width: 400px;
+    height: 90px;
+    border-radius: 20px;
+    color: white;
+    z-index: 100;
+  }
 }
 @media only screen and (max-width: 600px) {
   tbody{
@@ -226,6 +299,23 @@ tbody tr:hover{
   .status{
     display: none;
   }
+  tbody tr:active::after{
+    content: attr(content);
+    display: block;
+    position: fixed;
+    padding: 20px 10px;
+    word-break: break-all;
+    border: 2px solid #DC5B21;
+    background-color: #1C3027;
+    font-size: medium;
+    top: 200px;
+    left: 10px;
+    width: 400px;
+    height: 90px;
+    border-radius: 20px;
+    color: white;
+    z-index: 100;
+  }
 }
 @media only screen and (max-width: 500px) {
   tbody{
@@ -239,5 +329,22 @@ tbody tr:hover{
   } 
   .logo{
     display: none;
+  }
+  tbody tr:active::after{
+    content: attr(content);
+    display: block;
+    position: fixed;
+    padding: 20px 10px;
+    word-break: break-all;
+    border: 2px solid #DC5B21;
+    background-color: #1C3027;
+    font-size: medium;
+    top: 200px;
+    left: 10px;
+    width: 400px;
+    height: 90px;
+    border-radius: 20px;
+    color: white;
+    z-index: 100;
   }
 }
