@@ -22,9 +22,8 @@ table {
   overflow: hidden;
 }
 thead{
-  float:top;
   display:block;
-  height: 40px;
+  height: 45px;
   background-color: #DC5B21;
 }
 /**
@@ -33,7 +32,7 @@ thead{
 tbody {
   clear:both;
   position: absolute;
-  top:105px;
+  top:110px;
   display:block;
   height: 80vh;
   overflow: auto;
@@ -47,12 +46,11 @@ td {
 thead td{
   text-align: left;
   width: 100px;
-  font-size: middle;
+  font-size: medium;
 }
 header{
   margin-top: 10px;
 	display:block;
-  float:top;
   text-align: center;
   font-size: large;
   height:30px;
